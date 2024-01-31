@@ -235,8 +235,8 @@ Sec
 <form >
 
 
-<h6>Q1.Jimmy's father has three sons. Two of them are Paul I and Paul II. Can you guess the name of the third son?<br></h6>
-<h2><input type="radio" name="question1" >Paul III<br>
+<h6>Q1.Jimmy's father has three sons. Two of them are Paul-I and Paul-II. Can you guess the name of the third son?<br></h6>
+<h2><input type="radio" name="question1" >Paul-III<br>
 <input type="radio" name="question1" id="correct1">Jimmy<br>
 <input type="radio" name="question1"> Jerin<br>
 <input type="radio" name="question1">none of these <br></h2>
@@ -291,7 +291,7 @@ Sec
 <input type="radio" name="question9"> I don't eat mango<br><br><br></h2>
 
 <h6>Q10.What is the pH value of the human body?<br></h6>
-<h2><input type="radio" name="question10"> valueless<br>
+<h2><input type="radio" name="question10"> value less<br>
 <input type="radio" name="question10" > I dont know <br>
 <input type="radio" name="question10" > not as much i have <br>
 <input type="radio" name="question20" id="correct10"> none<br><br><br></h2>
@@ -327,15 +327,17 @@ incorrect answer -
 
 <button id="retry" onClick="window.location.reload();"  >Retry</button>
 <button id="showAnswer" onclick="showAnswer()">Show answer</button>
-<div id="sharetext" style="color:white; margin-top:220px;margin-left:10px;font-size:13px;position:fixed;">
+
+<button onclick="share()" id="share">
+<div id="sharetext" style="color:white; margin-top:-40px;margin-left:-30px;font-size:13px;position:fixed;">
 click below to share your score with friends and invite them to beat you.
 </div>
-<button onclick="share()" id="share">
+
 <div style="margin-left:-30px;margin-top:10px;color:yellow;"><b>share with friends</b></div>
  <img src="https://i.ibb.co/g7xx9vD/640px-Whats-App-svg.png" style="height:30px;width:30px;margin-left:110px;margin-top:-30px;">
  </button>
 
-<p id="answer" style="font-size:14px;display:none;margin-top:90px;margin-left:10px;color:white;position:fixed;">
+<p id="answer" style="font-size:3.8vw;display:none;margin-top:35vw;margin-left:2vw;color:white;position:fixed;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
 <b>
 Q1.Jimmy's father has three sons. Two of them are Paul I and Paul II. Can you guess the name of the third son?<br>
 ans- Jimmy<br><br>
@@ -481,8 +483,8 @@ document.getElementById("conform").style.display ='none';
 function showAnswer(){
 document.getElementById("answer").style.display ='block';
 document.getElementById("resultContainer").style.display ='none';
-document.getElementById("retry").style.bottom = '675px';
-document.getElementById("share").style.bottom = '675px';
+document.getElementById("retry").style.bottom = '670px';
+document.getElementById("share").style.bottom = '668px';
 document.getElementById("sharetext").style.display = 'none';
 document.getElementById("showAnswer").style.display = 'none';
 }
