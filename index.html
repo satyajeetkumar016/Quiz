@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>quiz</title>
 <style type="text/css">
@@ -327,15 +327,15 @@ incorrect answer -
 
 <button id="retry" onClick="window.location.reload();"  >Retry</button>
 <button id="showAnswer" onclick="showAnswer()">Show answer</button>
-<p id="sharetext" style="color:white; margin-top:220px;margin-left:10px;font-size:16px;">
+<div id="sharetext" style="color:white; margin-top:220px;margin-left:10px;font-size:13px;position:fixed;">
 click below to share your score with friends and invite them to beat you.
-</p>
+</div>
 <button onclick="share()" id="share">
 <div style="margin-left:-30px;margin-top:10px;color:yellow;"><b>share with friends</b></div>
  <img src="https://i.ibb.co/g7xx9vD/640px-Whats-App-svg.png" style="height:30px;width:30px;margin-left:110px;margin-top:-30px;">
  </button>
 
-<p id="answer" style="font-size:14px;display:none;margin-top:70px;margin-left:10px;color:white;">
+<p id="answer" style="font-size:14px;display:none;margin-top:90px;margin-left:10px;color:white;position:fixed;">
 <b>
 Q1.Jimmy's father has three sons. Two of them are Paul I and Paul II. Can you guess the name of the third son?<br>
 ans- Jimmy<br><br>
