@@ -6,6 +6,10 @@
 
 <title>quiz</title>
 <style type="text/css">
+
+
+
+
 #quiz {
  display:none;
  }
@@ -15,9 +19,13 @@ input[type="radio"]  {
   
 }
 
-
-
-h1{border:orange; 
+#heading {position:fixed;
+width:100%;
+height:40px;
+right:0px;
+top:-6vw;}
+h1{
+border:orange; 
 border-width:5px; 
 border-style:solid; 
 background-color:black;
@@ -37,14 +45,22 @@ text-shadow: 0 0 10px red, 2px 2px 10px yellow;
  #timer{
  display:none;
  position:fixed;
- background-color:#FF0000;
- color:white;
- margin-top:-90px;
- margin-left:-8px;
- width:100%;
- height:70px;
- font-size:30px;
+ background-color:red;
+ color:black;
+ margin-top:85px;
+ margin-left:260px;
+ width:90px;
+ height:90px;
+ font-size:17px;
  font-family:fantasy;
+ border-radius:50%;
+animation: my 1s infinite;
+ }
+ 
+ @keyframes my {
+ from {background-color:green;}
+ to{background-color:red;}
+ 
  }
  
 h2{ margin-left:15px;
@@ -71,13 +87,8 @@ h2{ margin-left:15px;
  left:10%;}
  
  #result{display:none;
- position:fixed;
- opacity:1;
- right:0px;
- bottom:0px; 
- background-color:rgb(255,106,10);
  width:100%;
- height:100%;
+ height:2000px;
  font-size:30px;}
  
  #resultContainer {
@@ -86,8 +97,8 @@ h2{ margin-left:15px;
  border-radius: 20px;
  background-color:black;
  position:fixed;
- right:6px;
- bottom:510px; 
+ margin-left:0px;
+ margin-top:-10vw;
  width:340px;
  height:130px;
  color:#00FF00;
@@ -161,7 +172,7 @@ width:160px;
 position:fixed;
 height:45px;
 right:170px;
-bottom:400px;
+bottom:360px;
 }
 #showAnswer{
 background-color:rgb(0,51,140);
@@ -200,17 +211,29 @@ display:block;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+#about{
+animation: mymove 2s infinite;
+}
+
+@keyframes mymove {
+ 0% {color:red;}
+ 50%{color:blue;}
+ 100%{color:red;}
+}
 </style>
 
 
 
 </head>
 <body>
+
+<div id="heading">
 <h1 align="center">
 QUIZ
 </h1>
+</div>
 
-
+<div id="newid">
 <button id="start" onclick="start()"><p style="margin-top:-15px;color:black;"><b>start </b></p>
 <p style="margin-top:-170px">Start and test your mind</p>
 </button>
@@ -222,12 +245,11 @@ Loading ...
 
 
 
-<div id="timer"> <font style="margin-left:20px;">
-Time left -
-<b><span id="countdowntimer" style="color:#00FFFF;font-size:40px;" >
+<div id="timer"><div style="margin-left:11px;margin-top:15px;">
+Time left
+<b><span id="countdowntimer" style="color:#00FFFF;font-size:34px;" >
 180</span></b>
-Sec
-</font>
+</div>
 </div>
 
 <!--question answer-->
@@ -294,13 +316,13 @@ Sec
 <h2><input type="radio" name="question10"> value less<br>
 <input type="radio" name="question10" > I dont know <br>
 <input type="radio" name="question10" > not as much i have <br>
-<input type="radio" name="question20" id="correct10"> none<br><br><br></h2>
+<input type="radio" name="question10" id="correct10"> none<br><br><br></h2>
 
 
 </form>
 <button  onclick="conformText();"  id="submit">submit</button>
 </div>
-
+</div>
 <div id ="conform">
 <div id="conformText">Conform to submit</div>
 
@@ -313,7 +335,7 @@ Sec
 
 
 
-<div id="result"><center>
+<div id="result"><center><br><br><br><br>
 <div id="resultContainer">
 <b>your score :-
 <input id="result1" value="100%" class="mobileShow" type="text" name="message"  readonly ><br>
@@ -329,7 +351,7 @@ incorrect answer -
 <button id="showAnswer" onclick="showAnswer()">Show answer</button>
 
 <button onclick="share()" id="share">
-<div id="sharetext" style="color:white; margin-top:-40px;margin-left:-30px;font-size:13px;position:fixed;">
+<div id="sharetext" style="color:white; margin-top:-15vw;margin-left:-34px;font-size:13px;position:fixed;">
 click below to share your score with friends and invite them to beat you.
 </div>
 
@@ -337,7 +359,7 @@ click below to share your score with friends and invite them to beat you.
  <img src="https://i.ibb.co/g7xx9vD/640px-Whats-App-svg.png" style="height:30px;width:30px;margin-left:110px;margin-top:-30px;">
  </button>
 
-<p id="answer" style="font-size:3.8vw;display:none;margin-top:35vw;margin-left:2vw;color:white;position:fixed;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
+<p id="answer" style="font-size:3.8vw;display:none;margin-top:35vw;margin-left:2vw;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
 <b>
 Q1.Jimmy's father has three sons. Two of them are Paul I and Paul II. Can you guess the name of the third son?<br>
 ans- Jimmy<br><br>
@@ -373,8 +395,8 @@ ans- none of these (actual ans-7)
 
 
 </div><br><br><br>
-<font color="grey" style="font-size:30px;margin-left:40px;"> <b>
-* creater satyajeet * </b></font>
+<div id="about" style="top:600px;font-size:30px;margin-left:30px;"><b>
+* creater satyajeet * </b></div>
 
 <script type="text/javascript">
 function start() {
@@ -461,9 +483,9 @@ document.getElementById("result1").value = score/10*100 + "%";
 document.getElementById('result2').innerHTML= score ;
 document.getElementById('result3').innerHTML= 10-score ;
 
-
-document.getElementById('submit').style.display= "none";
+document.getElementById('newid').style.display= "none";
 document.getElementById('result').style.display= "block";
+document.body.style.backgroundColor = 'orange';
 }
 
 
@@ -482,11 +504,18 @@ document.getElementById("conform").style.display ='none';
 //show answer
 function showAnswer(){
 document.getElementById("answer").style.display ='block';
-document.getElementById("resultContainer").style.display ='none';
-document.getElementById("retry").style.bottom = '670px';
-document.getElementById("share").style.bottom = '668px';
+
+document.getElementById("retry").style.bottom = '250px';
+document.getElementById("share").style.bottom = '180px';
+document.getElementById("retry").style.left = '250px';
+document.getElementById("share").style.left = '200px';
+
+
+
 document.getElementById("sharetext").style.display = 'none';
 document.getElementById("showAnswer").style.display = 'none';
+document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 
 
